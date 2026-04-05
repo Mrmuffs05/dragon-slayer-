@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Slayer?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <section id="intro" class="scene active">
+            <h1>Dragon Slayer?</h1>
+            <p class="story-text"> The Princess has disappeared? Your journey begins here...</p>
+            <button onclic="nextScene('scene1')">Begin Quest</button>
+        </section>
+
+        <section id="scene1" class="scene">
+            <h2>Village Encounter</h2>
+            <p class="story-text">A huge log blocks the road. Villagers look at you with hope.</p>
+            <div class="choices">
+                <button onclick="recordChoice(1, 'scene2')">1. Push the log halfway.</button>
+                <button onclick="recordChoice(2, 'scene2')">2. Offer advice and move on.</button>
+                <button onclick="recordChoice(3, 'scene2')">3. Boss around.</button>
+            </div>
+        </section>
+
+        <section id="scene2" class="scene">
+            <h2>Forest Path</h2>
+            <p class="story-text">A wounded fox limps across your path. It won't survive alone.</p>
+            <div class="choices">
+                <button onclick="recordChoice(1, 'scene3')">1. Carry the fox with you.</button>
+                <button onclick="recordChoice(2, 'scene3')">2. Give it food and water and move on.</button>
+                <button onclick="recordChoice(3, 'scene3')">3. Ignore it and move on.</button>
+            </div>
+        </section>
+
+        <section id="scene3" class="scene">
+            <h2>Castle Approach</h2>
+            <p class="story-text">The Princess glints strangely. "Only one with wisdom and compassion may face me."</p>
+            <div class="choices">
+                <button onclick="recordChoice(1, 'ending')">1. Cooperate with her test.</button>
+                <button onclick="recordChoice(2, 'ending')">2. Follow with caution.</button>
+                <button onclick="recordChoice(3, 'ending')">3. Charge recklessly.</button>
+            </div>
+        </section>
+
+        <section id="ending" class="scene">
+            <h2 id="ending-title"></h2>
+            <p id="ending-desc" class="story-text"></p>
+            <button onclick="location.reload()">Try Again</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
